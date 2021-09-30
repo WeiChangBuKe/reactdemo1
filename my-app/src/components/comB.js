@@ -1,14 +1,18 @@
-import React from 'react';
-import Composer from "./Composer"
-import Ani from "./Ani"
-class ComB extends React.Component {
-    render() {
-      return <div>
-          <Composer play={()=>{
-              this.refs.aniRef.play();
-          }}></Composer>
-          <Ani ref={"aniRef"}></Ani> 
-      </div>;
-    }
-  }
-export default ComB
+import Composer from "./Composer";
+import Ani from "./Ani";
+
+import React, { useRef } from "react";
+const ComB = () => {
+  const aniRef = useRef();
+  return (
+    <>
+      <Composer
+        play={() => {
+           aniRef.current.play();
+        }}
+      ></Composer>
+      <Ani ref={aniRef}></Ani>
+    </>
+  );
+};
+export default ComB;

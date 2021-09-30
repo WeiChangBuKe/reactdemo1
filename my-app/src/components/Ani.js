@@ -1,5 +1,6 @@
 import React from "react";
-class Ani extends React.Component {0
+
+class Ani extends React.Component {
 
   constructor(props) {
     super(props)
