@@ -1,5 +1,6 @@
 import React from 'react';
-import ComB from "./comB"
+import Composer from "./Composer"
+import Ani from "./Ani"
 class ComA extends React.Component {
     constructor(props) {
         super(props) 
@@ -13,9 +14,8 @@ class ComA extends React.Component {
     }
     render() {
       return <div>
-          COMA
-          <ComB register={this.handleRegister}></ComB>
-          <button onClick={this.state.func}>run func</button>
+          <Composer play={()=>this.state.func()}></Composer>
+          <Ani register={this.handleRegister}></Ani> 
       </div>;
     }
   }
