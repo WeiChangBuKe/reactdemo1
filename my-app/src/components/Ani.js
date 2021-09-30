@@ -4,8 +4,8 @@ class Ani extends React.Component {0
   constructor(props) {
     super(props)
     console.log("props",props);
-   this.state={played :0};
-    props.register(() => {
+   this.state={clickedCount :0};
+   props.register&&  props.register(() => {
         this.play();
       });
   }
@@ -13,13 +13,13 @@ class Ani extends React.Component {0
   play() {
     console.log("played");
  // .//  alert("play")
-    this.setState({played : this.state.played+1});
+    this.setState({clickedCount : this.state.clickedCount+1});
   }
   render() {
     return <div>
-      Ani Start
-      {this.state.played}
-      Ani End
+      Ani Start<br/>
+      &lt;{this.state.clickedCount}&gt;<br/>
+      Ani End<br/>
       </div>;
   }
 }
